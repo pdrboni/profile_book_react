@@ -29,6 +29,7 @@ export default function Student({ match }) {
   const [photo, setPhoto] = useState('');
 
   useEffect(() => {
+    console.log(id)
     if (!id) return;
 
     async function getData() {
