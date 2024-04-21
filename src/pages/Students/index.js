@@ -74,7 +74,7 @@ export default function Students() {
       <NewStudent to="student/">New Student</NewStudent>
 
       <StudentContainer>
-        {students.map((student, index) => (
+        {students && students.length &&  students.map((student, index) => (
           <div key={String(student.id)}>
             <ProfilePicture>
               {get(student, 'Photos[0].url', false) ? (
