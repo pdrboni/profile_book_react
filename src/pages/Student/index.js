@@ -29,13 +29,12 @@ export default function Student({ match }) {
   const [photo, setPhoto] = useState('');
 
   useEffect(() => {
-    console.log(id)
     if (!id) return;
 
     async function getData() {
       try {
         setIsLoading(true);
-        const { data } = await axios.get(`/student/${id}`);
+        const { data } = await axios.get(`/students/${id}`);
         const Photo = get(data, 'Photos[0].url', '');
 
         setPhoto(Photo);
