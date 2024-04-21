@@ -36,13 +36,13 @@ export default function Photos({ match }) {
   }, [id]);
 
   const handleChange = async (e) => {
-    const photo = e.target.files[0];
-    const photoURL = URL.createObjectURL(photo);
+    const photoTarget = e.target.files[0];
+    const photoURL = URL.createObjectURL(photoTarget);
 
     setPhoto(photoURL);
 
     const formData = new FormData();
-    formData.append('filepic', photo);
+    formData.append('filepic', photoTarget);
     formData.append('student_id', id);
 
     try {
